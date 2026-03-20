@@ -37,9 +37,9 @@ export default function Page() {
 				<FireflyEffect
 					circleCount={1800}
 					speedFactor={0.16}
-					minRadius={0.8}
+					minRadius={0.4}
 					maxRadius={4}
-					focusRadius={500}
+					focusRadius={800}
 					glowIntensity={16}
 					maxOpacity={0.5}
 					minOpacity={0}
