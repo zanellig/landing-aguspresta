@@ -1,0 +1,13 @@
+{
+	"bunVersion": "1.x",
+	"rewrites": [
+		{
+			"source": "/og.png",
+			"destination": "/api"
+		},
+		{
+			"source": "/sitemap.xml",
+			"destination": "/api"
+		}
+	]
+}
