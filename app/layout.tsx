@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Geist_Mono, Manrope } from "next/font/google";
 
 import "./globals.css";
@@ -11,6 +12,24 @@ const fontMono = Geist_Mono({
 	variable: "--font-mono",
 });
 
+export const metadata: Metadata = {
+	title: "Agustina Presta | Growth & Performance Marketing Strategist",
+	description:
+		"Soy Agustina Presta. En este sitio presento mi trabajo en growth, performance marketing, social media y estrategia de contenidos desde Buenos Aires.",
+	applicationName: "Agustina Presta",
+	authors: [{ name: "Agustina Presta" }],
+	creator: "Agustina Presta",
+	keywords: [
+		"Agustina Presta",
+		"Growth Marketing",
+		"Performance Marketing",
+		"Social Media Manager",
+		"Community Manager",
+		"Estrategia de contenidos",
+		"Portfolio marketing",
+	],
+};
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -18,7 +37,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html
-			lang="en"
+			lang="es-AR"
 			suppressHydrationWarning
 			className={cn(
 				"antialiased",
