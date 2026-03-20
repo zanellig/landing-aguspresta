@@ -43,6 +43,12 @@ export default function Page() {
 					glowIntensity={16}
 					maxOpacity={0.5}
 					minOpacity={0}
+					followCursor={false}
+					path={{
+						start: { x: -0.25, y: 0.5 },
+						end: { x: 2.5, y: 0.5 },
+						speed: 260,
+					}}
 					backgroundColor="#f6efe5"
 					color1="#8B5CF6"
 					color2="#8B5CF6"
