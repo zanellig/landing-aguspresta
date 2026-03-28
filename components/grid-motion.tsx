@@ -106,14 +106,14 @@ export function GridMotion({
 							marginLeft: rowIndex % 2 === 0 ? "-20px" : "20px",
 						}}
 					>
-						{row.map((item, colIndex) => (
-							<div
-								key={colIndex}
-								className="flex h-24 w-24 shrink-0 items-center justify-center rounded-lg border border-border/50 bg-card/80 p-4 text-center text-sm text-muted-foreground backdrop-blur-sm transition-all duration-300 hover:border-accent/50 hover:bg-card sm:h-28 sm:w-28 md:h-32 md:w-32"
-							>
-								{item}
-							</div>
-						))}
+							{row.map((item, colIndex) => (
+								<div
+									key={colIndex}
+									className="flex h-24 w-24 shrink-0 items-center justify-center rounded-lg border border-border bg-white/70 p-4 text-center text-sm text-foreground backdrop-blur-sm transition-all duration-300 hover:border-accent/50 hover:bg-white sm:h-28 sm:w-28 md:h-32 md:w-32"
+								>
+									{item}
+								</div>
+							))}
 					</div>
 				))}
 			</div>
