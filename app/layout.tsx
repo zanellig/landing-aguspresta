@@ -15,7 +15,7 @@ const fontMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: "Agustina Presta | Growth & Performance Marketing Strategist",
 	description:
-		"Soy Agustina Presta. En este sitio presento mi trabajo en growth, performance marketing, social media y estrategia de contenidos desde Buenos Aires.",
+		"Soy Agustina Presta, Growth & Performance Marketing Strategist desde Buenos Aires. Especializada en social media, community management, content strategy y marketing digital. +4 años de experiencia construyendo comunidades y escalando marcas.",
 	applicationName: "Agustina Presta",
 	authors: [{ name: "Agustina Presta" }],
 	creator: "Agustina Presta",
@@ -27,7 +27,23 @@ export const metadata: Metadata = {
 		"Community Manager",
 		"Estrategia de contenidos",
 		"Portfolio marketing",
+		"Marketing Digital Argentina",
+		"Content Strategy",
+		"Buenos Aires Marketing",
 	],
+	openGraph: {
+		title: "Agustina Presta | Growth & Performance Marketing Strategist",
+		description:
+			"Growth & Performance Marketing Strategist especializada en social media, community management y content strategy desde Buenos Aires.",
+		type: "website",
+		locale: "es_AR",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Agustina Presta | Growth & Performance Marketing",
+		description:
+			"Growth & Performance Marketing Strategist especializada en social media y content strategy.",
+	},
 };
 
 export default function RootLayout({
