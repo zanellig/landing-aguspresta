@@ -13,7 +13,6 @@ import {
 	IconBrandLinkedin,
 	IconMail,
 	IconArrowDown,
-	IconSparkles,
 	IconTrendingUp,
 	IconUsers,
 	IconPalette,
@@ -21,6 +20,7 @@ import {
 	IconChartBar,
 	IconCalendar,
 	IconMessageCircle,
+	IconSparkles,
 } from "@tabler/icons-react";
 
 const editorialFont = Cormorant_Garamond({
@@ -28,7 +28,7 @@ const editorialFont = Cormorant_Garamond({
 	weight: ["400", "500", "600", "700"],
 });
 
-const titleWords = ["Where", "Attention", "Becomes", "Momentum"];
+const titleWords = ["Agus", "Presta"];
 
 const navigationLinks = [
 	{ href: "#about", label: "About" },
@@ -235,28 +235,19 @@ export default function Page() {
 						/>
 					</div>
 
-					<div className="relative z-20 mb-6 overflow-hidden">
-						<p className="hero-name-reveal inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-primary sm:text-sm">
-							<IconSparkles className="size-3.5" />
-							Agustina Presta
-						</p>
-					</div>
-
 					<h1
-						className={`${editorialFont.className} relative z-10 text-[clamp(2.5rem,7vw,5.5rem)] font-medium leading-[0.95] tracking-[-0.04em] text-foreground`}
+						className={`${editorialFont.className} relative z-10 text-[clamp(3rem,10vw,8rem)] font-medium leading-[1] tracking-[-0.04em]`}
 					>
 						{titleWords.map((word, index) => (
 							<span
 								key={word}
-								className="hero-title-word inline-block px-[0.06em]"
+								className="hero-title-word inline-block px-[0.08em]"
 								style={{ "--index": index } as CSSProperties}
 							>
-								{word === "Attention" ? (
-									<span className="text-gradient-purple">{word}</span>
-								) : word === "Momentum" ? (
-									<span className="text-gradient-green">{word}</span>
+								{word === "Agus" ? (
+									<span className="text-foreground">{word}</span>
 								) : (
-									word
+									<span className="text-gradient-purple">{word}</span>
 								)}
 							</span>
 						))}
@@ -355,7 +346,7 @@ export default function Page() {
 								Sobre mí
 							</p>
 							<h2
-								className={`${editorialFont.className} text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl`}
+								className={`${editorialFont.className} text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 							>
 								Creando conexiones
 								<br />
@@ -434,7 +425,7 @@ export default function Page() {
 							Servicios
 						</p>
 						<h2
-							className={`${editorialFont.className} text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl`}
+							className={`${editorialFont.className} text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 						>
 							Lo que mejor{" "}
 							<span className="text-gradient-purple">hago</span>
@@ -480,7 +471,7 @@ export default function Page() {
 							Experiencia
 						</p>
 						<h2
-							className={`${editorialFont.className} text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl`}
+							className={`${editorialFont.className} text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 						>
 							Mi trayectoria{" "}
 							<span className="text-gradient-green">profesional</span>
@@ -537,7 +528,7 @@ export default function Page() {
 							{clientLogos.map((client, i) => (
 								<div
 									key={i}
-									className="rounded-lg border border-border/30 bg-card/30 px-6 py-3 text-lg font-semibold text-muted-foreground/60 transition-all duration-300 hover:border-primary/30 hover:text-foreground"
+									className="rounded-lg border border-border/50 bg-card/50 px-6 py-3 text-lg font-semibold text-foreground/70 transition-all duration-300 hover:border-primary/30 hover:bg-card hover:text-foreground"
 								>
 									{client}
 								</div>
@@ -580,7 +571,7 @@ export default function Page() {
 						Contacto
 					</p>
 					<h2
-						className={`${editorialFont.className} text-4xl font-medium leading-tight tracking-tight sm:text-5xl lg:text-6xl`}
+						className={`${editorialFont.className} text-4xl font-medium leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 					>
 						¿Listo para{" "}
 						<span className="text-gradient-purple">crecer</span>?
