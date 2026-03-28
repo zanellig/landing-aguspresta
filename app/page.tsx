@@ -388,29 +388,29 @@ export default function Page() {
 						</div>
 					</div>
 
-					{/* Stats */}
-					<div className="mt-16 grid grid-cols-2 gap-6 sm:grid-cols-4">
-						{[
-							{ value: "+4", label: "Años de experiencia" },
-							{ value: "+15", label: "Clientes atendidos" },
-							{ value: "+60K", label: "Seguidores generados" },
-							{ value: "+10", label: "Industrias" },
-						].map((stat, i) => (
-							<div
-								key={i}
-								className="rounded-2xl border border-border/50 bg-card/50 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card"
-							>
-								<p
-									className={`${editorialFont.className} text-4xl font-bold text-primary sm:text-5xl`}
+						{/* Stats */}
+						<div className="mt-16 grid grid-cols-2 gap-6 sm:grid-cols-4">
+							{[
+								{ value: "+4", label: "Años de experiencia" },
+								{ value: "+15", label: "Clientes atendidos" },
+								{ value: "+60K", label: "Seguidores generados" },
+								{ value: "+10", label: "Industrias" },
+							].map((stat, i) => (
+								<div
+									key={i}
+									className="rounded-2xl border border-border bg-white/70 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-white"
 								>
-									{stat.value}
-								</p>
-								<p className="mt-2 text-sm text-muted-foreground">
-									{stat.label}
-								</p>
-							</div>
-						))}
-					</div>
+									<p
+										className={`${editorialFont.className} text-4xl font-bold sm:text-5xl`}
+									>
+										<span className="text-gradient-green">{stat.value}</span>
+									</p>
+									<p className="mt-2 text-sm text-foreground/70">
+										{stat.label}
+									</p>
+								</div>
+							))}
+						</div>
 				</div>
 			</section>
 
@@ -436,27 +436,27 @@ export default function Page() {
 						</p>
 					</div>
 
-					<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-						{services.map((service, i) => (
-							<div
-								key={i}
-								className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/60 p-6 backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:bg-card hover:shadow-xl hover:shadow-primary/5"
-							>
-								<div className="absolute -right-8 -top-8 size-24 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-								<div className="relative z-10">
-									<div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
-										<service.icon className="size-6" />
+						<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+							{services.map((service, i) => (
+								<div
+									key={i}
+									className="group relative overflow-hidden rounded-2xl border border-border bg-white/80 p-6 backdrop-blur-sm transition-all duration-500 hover:border-primary/40 hover:bg-white hover:shadow-xl hover:shadow-primary/10"
+								>
+									<div className="absolute -right-8 -top-8 size-24 rounded-full bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+									<div className="relative z-10">
+										<div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+											<service.icon className="size-6" />
+										</div>
+										<h3 className="mb-2 text-xl font-semibold text-foreground">
+											{service.title}
+										</h3>
+										<p className="text-muted-foreground">
+											{service.description}
+										</p>
 									</div>
-									<h3 className="mb-2 text-xl font-semibold text-foreground">
-										{service.title}
-									</h3>
-									<p className="text-muted-foreground">
-										{service.description}
-									</p>
 								</div>
-							</div>
-						))}
-					</div>
+							))}
+						</div>
 				</div>
 			</section>
 
@@ -519,22 +519,22 @@ export default function Page() {
 						</div>
 					</div>
 
-					{/* Clients worked with */}
-					<div className="mt-20">
-						<p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-							Marcas con las que trabajé
-						</p>
-						<div className="flex flex-wrap items-center justify-center gap-8">
-							{clientLogos.map((client, i) => (
-								<div
-									key={i}
-									className="rounded-lg border border-border/50 bg-card/50 px-6 py-3 text-lg font-semibold text-foreground/70 transition-all duration-300 hover:border-primary/30 hover:bg-card hover:text-foreground"
-								>
-									{client}
-								</div>
-							))}
+						{/* Clients worked with */}
+						<div className="mt-20">
+							<p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-foreground/60">
+								Marcas con las que trabajé
+							</p>
+							<div className="flex flex-wrap items-center justify-center gap-4">
+								{clientLogos.map((client, i) => (
+									<div
+										key={i}
+										className="rounded-lg border border-border bg-white/60 px-5 py-2.5 text-base font-medium text-foreground transition-all duration-300 hover:border-primary/40 hover:bg-white"
+									>
+										{client}
+									</div>
+								))}
+							</div>
 						</div>
-					</div>
 				</div>
 			</section>
 
@@ -601,49 +601,49 @@ export default function Page() {
 				</div>
 			</section>
 
-			{/* Footer */}
-			<footer className="relative z-10 border-t border-border/50 bg-card/30 px-6 py-12 backdrop-blur-sm sm:px-10 lg:px-16">
-				<div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
-					<div className="flex items-center gap-2">
-						<span className="text-xl font-bold text-primary">AP</span>
-						<span className="text-sm text-muted-foreground">
-							© 2026 Agustina Presta
-						</span>
-					</div>
+				{/* Footer */}
+				<footer className="relative z-10 border-t border-border bg-white/50 px-6 py-12 backdrop-blur-sm sm:px-10 lg:px-16">
+					<div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
+						<div className="flex items-center gap-2">
+							<span className="text-xl font-bold text-primary">AP</span>
+							<span className="text-sm text-foreground/70">
+								© 2026 Agustina Presta
+							</span>
+						</div>
 
-					<div className="flex items-center gap-4">
-						<a
-							href="https://www.linkedin.com/in/agustinapresta"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-muted-foreground transition-colors hover:text-primary"
-							aria-label="LinkedIn"
-						>
-							<IconBrandLinkedin className="size-5" />
-						</a>
-						<a
-							href="https://instagram.com/agustinapresta"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-muted-foreground transition-colors hover:text-accent"
-							aria-label="Instagram"
-						>
-							<IconBrandInstagram className="size-5" />
-						</a>
-						<a
-							href="mailto:contacto@agustinapresta.com"
-							className="text-muted-foreground transition-colors hover:text-primary"
-							aria-label="Email"
-						>
-							<IconMail className="size-5" />
-						</a>
-					</div>
+						<div className="flex items-center gap-4">
+							<a
+								href="https://www.linkedin.com/in/agustinapresta"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-foreground/60 transition-colors hover:text-primary"
+								aria-label="LinkedIn"
+							>
+								<IconBrandLinkedin className="size-5" />
+							</a>
+							<a
+								href="https://instagram.com/agustinapresta"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-foreground/60 transition-colors hover:text-accent"
+								aria-label="Instagram"
+							>
+								<IconBrandInstagram className="size-5" />
+							</a>
+							<a
+								href="mailto:contacto@agustinapresta.com"
+								className="text-foreground/60 transition-colors hover:text-primary"
+								aria-label="Email"
+							>
+								<IconMail className="size-5" />
+							</a>
+						</div>
 
-					<p className="text-sm text-muted-foreground">
-						Buenos Aires, Argentina
-					</p>
-				</div>
-			</footer>
+						<p className="text-sm text-foreground/70">
+							Buenos Aires, Argentina
+						</p>
+					</div>
+				</footer>
 		</main>
 	);
 }
