@@ -48,15 +48,12 @@
 }
 
 :root {
-  /* Cozy warm cream background with green/purple accents */
-  --background: oklch(0.965 0.008 85);
-  /* Dark charcoal for excellent contrast on cream */
-  --foreground: oklch(0.2 0 0);
+  --background: oklch(0.95 0.008 85);
+  --foreground: oklch(0.15 0.02 150);
   --card: oklch(0.96 0.01 85);
-  --card-foreground: oklch(0.2 0 0);
+  --card-foreground: oklch(0.15 0.02 150);
   --popover: oklch(0.96 0.01 85);
-  --popover-foreground: oklch(0.2 0 0);
-  /* Deep forest green as primary - darker for better contrast */
+  --popover-foreground: oklch(0.15 0.02 150);
   --primary: oklch(0.32 0.12 150);
   --primary-foreground: oklch(0.98 0.005 85);
   /* Soft sage secondary - lighter for backgrounds */
@@ -79,7 +76,7 @@
   --chart-5: oklch(0.25 0.08 150);
   --radius: 0.625rem;
   --sidebar: oklch(0.96 0.01 85);
-  --sidebar-foreground: oklch(0.2 0 0);
+  --sidebar-foreground: oklch(0.15 0.02 150);
   --sidebar-primary: oklch(0.32 0.12 150);
   --sidebar-primary-foreground: oklch(0.98 0.005 85);
   --sidebar-accent: oklch(0.5 0.24 295);
