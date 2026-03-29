@@ -340,7 +340,7 @@ export default function Page() {
 								{word === "Agus" ? (
 									<span className="text-foreground">{word}</span>
 								) : (
-									<span className="text-gradient-purple">{word}</span>
+									<span className="text-gradient-accent">{word}</span>
 								)}
 							</span>
 						))}
@@ -449,7 +449,7 @@ export default function Page() {
 							>
 								Creando conexiones
 								<br />
-								<span className="text-gradient-green">que importan</span>
+								<span className="text-gradient-primary">que importan</span>
 							</h2>
 						</div>
 
@@ -505,7 +505,7 @@ export default function Page() {
 								<p
 									className={`${editorialFont.className} text-4xl font-bold sm:text-5xl`}
 								>
-									<span className="text-gradient-green">{stat.value}</span>
+									<span className="text-gradient-primary">{stat.value}</span>
 								</p>
 								<p className="mt-2 text-sm text-foreground/70">{stat.label}</p>
 							</div>
@@ -527,7 +527,7 @@ export default function Page() {
 						<h2
 							className={`${editorialFont.className} text-4xl leading-tight font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 						>
-							Lo que mejor <span className="text-gradient-purple">hago</span>
+							Lo que mejor <span className="text-gradient-accent">hago</span>
 						</h2>
 						<p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
 							Soluciones integrales para hacer crecer tu marca en el mundo
@@ -571,7 +571,7 @@ export default function Page() {
 							className={`${editorialFont.className} text-4xl leading-tight font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 						>
 							Mi trayectoria{" "}
-							<span className="text-gradient-green">profesional</span>
+							<span className="text-gradient-primary">profesional</span>
 						</h2>
 					</div>
 
@@ -650,7 +650,7 @@ export default function Page() {
 					<h2
 						className={`${editorialFont.className} text-4xl leading-tight font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 					>
-						¿Listo para <span className="text-gradient-purple">crecer</span>?
+						¿Listo para <span className="text-gradient-accent">crecer</span>?
 					</h2>
 					<p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
 						Estoy disponible para proyectos freelance y colaboraciones.

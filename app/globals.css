@@ -327,20 +327,20 @@
     background-size: 60px 60px;
   }
 
-  .text-gradient-green {
+  .text-gradient-primary {
     color: var(--primary);
   }
 
-  .text-gradient-purple {
-    color: oklch(0.44 0.25 298);
+  .text-gradient-accent {
+    color: var(--accent);
   }
 
   @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-    .text-gradient-green {
+    .text-gradient-primary {
       background-image: linear-gradient(
         135deg,
         var(--primary),
-        oklch(0.4375 0.14 155)
+        var(--chart-1)
       );
       background-repeat: no-repeat;
       background-clip: text;
@@ -352,11 +352,11 @@
       display: inline-block;
     }
 
-    .text-gradient-purple {
+    .text-gradient-accent {
       background-image: linear-gradient(
         135deg,
-        oklch(0.4 0.26 295),
-        oklch(0.48 0.24 300)
+        var(--accent),
+        var(--ring)
       );
       background-repeat: no-repeat;
       -webkit-background-clip: text;
