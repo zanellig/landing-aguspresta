@@ -290,10 +290,10 @@ export default function Page() {
 			<nav className="fixed top-0 right-0 left-0 z-50 flex items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
 				<Link
 					href="#hero"
-					className="text-lg font-bold tracking-tight text-primary"
+					className="text-lg font-bold tracking-tight"
 					onClick={handleNavClick("#hero")}
 				>
-					AP
+					Presta
 				</Link>
 				<div className="flex items-center gap-1 rounded-full border border-border/50 bg-card/80 px-2 py-1.5 backdrop-blur-md sm:gap-2">
 					{navigationLinks.map((link) => (
@@ -341,7 +341,7 @@ export default function Page() {
 								{word === "Agus" ? (
 									<span className="text-foreground">{word}</span>
 								) : (
-									<span className="text-gradient-accent">{word}</span>
+									<span className="text-foreground">{word}</span>
 								)}
 							</span>
 						))}
@@ -450,7 +450,7 @@ export default function Page() {
 							>
 								Creando conexiones
 								<br />
-								<span className="text-gradient-primary">que importan</span>
+								que importan
 							</h2>
 						</div>
 
@@ -528,7 +528,7 @@ export default function Page() {
 						<h2
 							className={`${editorialFont.className} text-4xl leading-tight font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 						>
-							Lo que mejor <span className="text-gradient-accent">hago</span>
+							Lo que mejor hago
 						</h2>
 						<p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
 							Soluciones integrales para hacer crecer tu marca en el mundo
@@ -571,8 +571,7 @@ export default function Page() {
 						<h2
 							className={`${editorialFont.className} text-4xl leading-tight font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 						>
-							Mi trayectoria{" "}
-							<span className="text-gradient-primary">profesional</span>
+							Mi trayectoria profesional
 						</h2>
 					</div>
 
@@ -651,7 +650,7 @@ export default function Page() {
 					<h2
 						className={`${editorialFont.className} text-4xl leading-tight font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 					>
-						¿Listo para <span className="text-gradient-accent">crecer</span>?
+						¿Listo para crecer?
 					</h2>
 					<p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
 						Estoy disponible para proyectos freelance y colaboraciones.
@@ -717,7 +716,9 @@ export default function Page() {
 					</div>
 
 					<div className="flex items-center gap-4">
-						<p className="text-sm text-foreground/70">Buenos Aires, Argentina</p>
+						<p className="text-sm text-foreground/70">
+							Buenos Aires, Argentina
+						</p>
 						<ThemeToggle />
 					</div>
 				</div>
