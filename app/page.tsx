@@ -20,6 +20,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, MouseEvent as ReactMouseEvent } from "react";
 import { useEffect, useRef, useState } from "react";
+import CountUp from "@/components/CountUp";
 import GridMotion from "@/components/GridMotion";
 import LogoLoop from "@/components/LogoLoop";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -494,10 +495,10 @@ export default function Page() {
 					{/* Stats */}
 					<div className="mt-16 grid grid-cols-2 gap-6 select-none sm:grid-cols-4">
 						{[
-							{ value: "+4", label: "Años de experiencia" },
-							{ value: "+15", label: "Clientes atendidos" },
-							{ value: "+60K", label: "Seguidores generados" },
-							{ value: "+10", label: "Industrias" },
+							{ prefix: "+", value: 4, suffix: "", label: "Años de experiencia" },
+							{ prefix: "+", value: 15, suffix: "", label: "Clientes atendidos" },
+							{ prefix: "+", value: 60, suffix: "K", label: "Seguidores generados" },
+							{ prefix: "+", value: 10, suffix: "", label: "Industrias" },
 						].map((stat, i) => (
 							<div
 								key={i}
@@ -506,7 +507,11 @@ export default function Page() {
 								<p
 									className={`${editorialFont.className} text-4xl font-bold sm:text-5xl`}
 								>
-									<span className="text-gradient-primary">{stat.value}</span>
+									<span className="text-gradient-primary">
+										{stat.prefix}
+										<CountUp from={0} to={stat.value} duration={2} onStart={() => {}} onEnd={() => {}} />
+										{stat.suffix}
+									</span>
 								</p>
 								<p className="mt-2 text-sm text-foreground/70">{stat.label}</p>
 							</div>
