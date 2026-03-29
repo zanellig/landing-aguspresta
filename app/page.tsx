@@ -449,9 +449,9 @@ export default function Page() {
 							<h2
 								className={`${editorialFont.className} text-4xl leading-tight font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
 							>
-								Creando conexiones
+								Convierto comunidades
 								<br />
-								que importan
+								en activos de negocio.
 							</h2>
 						</div>
 
@@ -495,21 +495,40 @@ export default function Page() {
 					{/* Stats */}
 					<div className="mt-16 grid grid-cols-2 gap-6 select-none sm:grid-cols-4">
 						{[
-							{ prefix: "+", value: 4, suffix: "", label: "Años de experiencia" },
-							{ prefix: "+", value: 15, suffix: "", label: "Clientes atendidos" },
-							{ prefix: "+", value: 60, suffix: "K", label: "Seguidores generados" },
+							{
+								prefix: "+",
+								value: 4,
+								suffix: "",
+								label: "Años de experiencia",
+							},
+							{
+								prefix: "+",
+								value: 15,
+								suffix: "",
+								label: "Clientes",
+							},
+							{
+								prefix: "+",
+								value: 60,
+								suffix: "K",
+								label: "Seguidores generados",
+							},
 							{ prefix: "+", value: 10, suffix: "", label: "Industrias" },
 						].map((stat, i) => (
 							<div
 								key={i}
 								className="rounded-2xl border border-border bg-card p-6 text-center backdrop-blur-sm transition-all duration-300 hover:border-primary/40 hover:bg-card/60"
 							>
-								<p
-									className={`${editorialFont.className} text-4xl font-bold sm:text-5xl`}
-								>
+								<p className={`text-4xl font-bold sm:text-5xl`}>
 									<span className="text-gradient-primary">
 										{stat.prefix}
-										<CountUp from={0} to={stat.value} duration={2} onStart={() => {}} onEnd={() => {}} />
+										<CountUp
+											from={0}
+											to={stat.value}
+											duration={2}
+											onStart={() => {}}
+											onEnd={() => {}}
+										/>
 										{stat.suffix}
 									</span>
 								</p>
