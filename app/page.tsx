@@ -22,6 +22,7 @@ import type { CSSProperties, MouseEvent as ReactMouseEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import GridMotion from "@/components/GridMotion";
 import LogoLoop from "@/components/LogoLoop";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import FireflyEffect from "@/components/ui/firefly";
 
 const editorialFont = Cormorant_Garamond({
@@ -682,7 +683,6 @@ export default function Page() {
 			<footer className="relative z-10 border-t border-border bg-card px-6 py-12 backdrop-blur-sm sm:px-10 lg:px-16">
 				<div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
 					<div className="flex items-center gap-2">
-						<span className="text-xl font-bold text-primary">AP</span>
 						<span className="text-sm text-foreground/70">
 							© 2026 Agustina Presta
 						</span>
@@ -716,7 +716,10 @@ export default function Page() {
 						</a>
 					</div>
 
-					<p className="text-sm text-foreground/70">Buenos Aires, Argentina</p>
+					<div className="flex items-center gap-4">
+						<p className="text-sm text-foreground/70">Buenos Aires, Argentina</p>
+						<ThemeToggle />
+					</div>
 				</div>
 			</footer>
 		</main>
