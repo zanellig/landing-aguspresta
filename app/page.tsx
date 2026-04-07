@@ -5,12 +5,10 @@ import {
   IconArrowDown,
   IconBrandInstagram,
   IconBrandLinkedin,
-  IconCalendar,
   IconChartBar,
   IconMail,
   IconMessageCircle,
   IconPalette,
-  IconSparkles,
   IconTrendingUp,
   IconUsers,
   IconVideo,
@@ -21,7 +19,6 @@ import Link from "next/link"
 import type { CSSProperties, MouseEvent as ReactMouseEvent } from "react"
 import { useEffect, useRef, useState } from "react"
 import CountUp from "@/components/CountUp"
-import GridMotion from "@/components/GridMotion"
 import LogoLoop from "@/components/LogoLoop"
 import { ThemeToggle } from "@/components/ThemeToggle"
 import FireflyEffect from "@/components/ui/firefly"
@@ -36,7 +33,7 @@ const titleWords = ["Agus", "Presta"]
 const navigationLinks = [
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
-  { href: "#experience", label: "Experience" },
+  { href: "#brands", label: "Marcas" },
   { href: "#contact", label: "Contact" },
 ]
 
@@ -76,91 +73,6 @@ const services = [
     title: "Copywriting",
     description:
       "Redacción creativa y persuasiva adaptada a cada plataforma y audiencia.",
-  },
-]
-
-const gridMotionItems = [
-  "Community",
-  <IconSparkles key="grid-sparkles" className="size-8 text-primary" />,
-  "Estrategia",
-  <span
-    key="grid-60k"
-    className="text-xs font-semibold tracking-[0.3em] text-primary uppercase"
-  >
-    +60K
-  </span>,
-  "Reels",
-  <IconTrendingUp key="grid-trending" className="size-8 text-accent" />,
-  "Engagement",
-  <IconUsers key="grid-users" className="size-8 text-primary" />,
-  "Branding",
-  <IconPalette key="grid-palette" className="size-8 text-accent" />,
-  "Analytics",
-  <span
-    key="grid-roi"
-    className="text-xs font-semibold tracking-[0.3em] text-accent uppercase"
-  >
-    ROI
-  </span>,
-  "Contenido",
-  <IconChartBar key="grid-chart" className="size-8 text-primary" />,
-  "Video",
-  <IconVideo key="grid-video" className="size-8 text-accent" />,
-  "Calendario",
-  <IconCalendar key="grid-calendar" className="size-8 text-primary" />,
-  "Copy",
-  <IconMessageCircle key="grid-message" className="size-8 text-accent" />,
-  "Instagram",
-  <IconBrandInstagram key="grid-instagram" className="size-8 text-primary" />,
-  "LinkedIn",
-  <IconBrandLinkedin key="grid-linkedin" className="size-8 text-accent" />,
-  "Growth",
-  <span
-    key="grid-smm"
-    className="text-xs font-semibold tracking-[0.3em] text-primary uppercase"
-  >
-    SMM
-  </span>,
-  "Campañas",
-  "Social Media",
-]
-
-const experiences = [
-  {
-    role: "Analista de Marketing",
-    company: "AMK Brokers",
-    period: "Dic 2025 – Actualidad",
-    type: "Jornada completa",
-  },
-  {
-    role: "Directora de Marketing",
-    company: "ISIMO COMPANY",
-    period: "Oct 2025 – Actualidad",
-    type: "Jornada parcial",
-  },
-  {
-    role: "Social Media Manager",
-    company: "Lead Station",
-    period: "Jul 2025 – Actualidad",
-    type: "Freelance",
-  },
-  {
-    role: "Content & Marketing Strategist",
-    company: "Spot Studio",
-    period: "Abr 2024 – Dic 2025",
-    type: "Híbrido",
-  },
-  {
-    role: "Head of Marketing",
-    company: "State of Chaos",
-    period: "Ago 2023 – Jul 2025",
-    type: "Remoto",
-  },
-  {
-    role: "Community Manager",
-    company: "Agencia D'Artagnan",
-    period: "Ago 2023 – Feb 2025",
-    type: "Remoto",
   },
 ]
 
@@ -582,79 +494,24 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* Brands Section */}
       <section
-        id="experience"
+        id="brands"
         className="relative z-10 px-6 py-24 sm:px-10 sm:py-32 lg:px-16"
       >
         <div className="mx-auto max-w-6xl">
-          <div className="mb-16">
-            <p className="mb-4 text-sm font-semibold tracking-widest text-accent uppercase">
-              Experiencia
-            </p>
-            <h2
-              className={`${editorialFont.className} text-4xl leading-tight font-medium tracking-tight text-foreground sm:text-5xl lg:text-6xl`}
-            >
-              Mi trayectoria profesional
-            </h2>
-          </div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute top-0 left-0 hidden h-full w-px bg-gradient-to-b from-primary via-accent to-transparent sm:left-1/2 sm:block sm:-translate-x-px" />
-
-            <div className="space-y-8">
-              {experiences.map((exp, i) => (
-                <div
-                  key={i}
-                  className={`relative flex flex-col sm:flex-row ${
-                    i % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
-                  }`}
-                >
-                  {/* Timeline dot */}
-                  <div className="absolute top-0 left-0 hidden size-3 rounded-full border-2 border-primary bg-background sm:left-1/2 sm:block sm:-translate-x-1/2" />
-
-                  {/* Content */}
-                  <div
-                    className={`w-full sm:w-1/2 ${
-                      i % 2 === 0 ? "sm:pr-12 sm:text-right" : "sm:pl-12"
-                    }`}
-                  >
-                    <div className="group rounded-2xl border border-border/50 bg-card/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card">
-                      <span className="inline-block rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
-                        {exp.type}
-                      </span>
-                      <h3 className="mt-3 text-xl font-semibold text-foreground">
-                        {exp.role}
-                      </h3>
-                      <p className="mt-1 font-medium text-primary">
-                        {exp.company}
-                      </p>
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {exp.period}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Clients worked with */}
-          <div className="mt-20">
-            <p className="mb-8 text-center text-sm font-semibold tracking-widest text-foreground/60 uppercase">
-              Marcas con las que trabajé
-            </p>
-            <div className="mt-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-              <LogoLoop
-                logos={clientLogos}
-                pauseOnHover
-                logoHeight={40}
-                speed={40}
-                gap={48}
-                className="[&_img]:max-w-[74.545px]! [&_img]:object-contain! [&_img[src*='crown']]:max-w-[93.181px]!"
-              />
-            </div>
+          <p className="mb-8 text-center text-sm font-semibold tracking-widest text-foreground/60 uppercase">
+            Marcas con las que trabajé
+          </p>
+          <div className="mt-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <LogoLoop
+              logos={clientLogos}
+              pauseOnHover
+              logoHeight={50}
+              speed={40}
+              gap={48}
+              className="[&_img]:max-w-[93.181px]! [&_img]:object-contain! [&_img[src*='crown']]:max-w-[116.476px]!"
+            />
           </div>
         </div>
       </section>
