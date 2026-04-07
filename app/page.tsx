@@ -326,7 +326,7 @@ export default function Page() {
               <IconBrandWhatsapp className="size-5" />
             </a>
             <a
-              href="https://instagram.com/agustinapresta"
+              href="https://instagram.com/agus.presta"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
@@ -616,7 +616,7 @@ export default function Page() {
               <IconBrandWhatsapp className="size-5" />
             </a>
             <a
-              href="https://instagram.com/agustinapresta"
+              href="https://instagram.com/agus.presta"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() =>
