@@ -90,6 +90,7 @@ const marqueeItems = [
 
 const clientLogos = [
   { src: "/makro.webp", alt: "Makro" },
+  { src: "/amk.png", alt: "AMK" },
   { src: "/bayer.webp", alt: "Bayer" },
   {
     node: (
@@ -103,12 +104,15 @@ const clientLogos = [
       />
     ),
   },
+  { src: "/ilolay.png", alt: "Ilolay" },
+  { src: "/ribs-al-rio.png", alt: "Ribs al Rio" },
+  { src: "/crown-mustang-better-white.webp", alt: "Crown Mustang" },
+  { src: "/doll-store-white.webp", alt: "Doll Store" },
+  { src: "/ds-men-white.webp", alt: "DS Men" },
+  { src: "/pucheta-paz-white.webp", alt: "Pucheta Paz" },
+  { src: "/state-of-chaos-white.webp", alt: "State of Chaos" },
+  { src: "/vacalin.png", alt: "Vacalin" },
   { src: "/wework.webp", alt: "WeWork" },
-  {
-    src: "/crown-mustang.webp",
-    srcSet: "/crown-mustang.webp 1x, /crown-mustang@2x.webp 2x",
-    alt: "Crown Mustang",
-  },
 ]
 
 const whatsappHref =
@@ -528,10 +532,10 @@ export default function Page() {
             <LogoLoop
               logos={clientLogos}
               pauseOnHover
-              logoHeight={50}
+              logoHeight={62.5}
               speed={40}
               gap={48}
-              className="[&_img]:max-w-[93.181px]! [&_img]:object-contain! [&_img[src*='crown']]:max-w-[116.476px]!"
+              className="[&_img]:max-w-[116.476px]! [&_img]:object-contain! [&_img[src*='crown']]:max-w-[145.595px]!"
             />
           </div>
         </div>
