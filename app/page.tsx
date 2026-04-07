@@ -4,7 +4,7 @@ import { getCalApi } from "@calcom/embed-react"
 import {
   IconArrowDown,
   IconBrandInstagram,
-  IconBrandLinkedin,
+  IconBrandWhatsapp,
   IconChartBar,
   IconMail,
   IconMessageCircle,
@@ -22,6 +22,7 @@ import CountUp from "@/components/CountUp"
 import LogoLoop from "@/components/LogoLoop"
 import { ThemeToggle } from "@/components/ThemeToggle"
 import FireflyEffect from "@/components/ui/firefly"
+import posthog from "posthog-js"
 
 const editorialFont = Cormorant_Garamond({
   subsets: ["latin"],
@@ -108,21 +109,21 @@ const clientLogos = [
     srcSet: "/crown-mustang.webp 1x, /crown-mustang@2x.webp 2x",
     alt: "Crown Mustang",
   },
-  {
-    node: (
-      <span className="rounded-lg border border-border bg-card/60 px-5 py-2.5 text-base font-medium text-foreground transition-all duration-300 hover:border-primary/40 hover:bg-card">
-        Thames Denim
-      </span>
-    ),
-  },
 ]
+
+const whatsappHref =
+  "http://wa.me/5491130535307?text=Hola%20Agus%2C%20me%20gustaria%20recibir%20mas%20informacion%21"
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState("")
   const observerRef = useRef<IntersectionObserver | null>(null)
+  const contactSectionViewedRef = useRef(false)
 
   const handleNavClick =
-    (href: string) => (event: ReactMouseEvent<HTMLAnchorElement>) => {
+    (href: string, label?: string) =>
+    (event: ReactMouseEvent<HTMLAnchorElement>) => {
+      posthog.capture("nav_link_clicked", { href, label: label ?? href })
+
       if (!href.startsWith("#")) return
 
       const target = document.querySelector<HTMLElement>(href)
@@ -161,6 +162,13 @@ export default function Page() {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id)
+            if (
+              entry.target.id === "contact" &&
+              !contactSectionViewedRef.current
+            ) {
+              contactSectionViewedRef.current = true
+              posthog.capture("contact_section_viewed")
+            }
           }
         }
       },
@@ -213,7 +221,7 @@ export default function Page() {
             <Link
               key={link.label}
               href={link.href}
-              onClick={handleNavClick(link.href)}
+              onClick={handleNavClick(link.href, link.label)}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-300 sm:px-4 sm:text-sm ${
                 activeSection === link.href.slice(1)
                   ? "bg-primary text-primary-foreground"
@@ -271,12 +279,24 @@ export default function Page() {
           >
             <Link
               href="#contact"
+              onClick={() =>
+                posthog.capture("cta_clicked", {
+                  label: "Trabajemos juntos",
+                  location: "hero",
+                })
+              }
               className="group relative overflow-hidden rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/25"
             >
               <span className="relative z-10">Trabajemos juntos</span>
             </Link>
             <Link
               href="#services"
+              onClick={() =>
+                posthog.capture("services_cta_clicked", {
+                  label: "Ver servicios",
+                  location: "hero",
+                })
+              }
               className="group flex items-center gap-2 rounded-full border border-border bg-card/60 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:bg-card"
             >
               <span>Ver servicios</span>
@@ -290,18 +310,24 @@ export default function Page() {
             style={{ "--index": 1 } as CSSProperties}
           >
             <a
-              href="https://www.linkedin.com/in/agustinapresta"
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                posthog.capture("whatsapp_clicked", { location: "hero" })
+              }
               className="rounded-full border border-border/50 bg-card/50 p-3 text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-card hover:text-primary"
-              aria-label="LinkedIn"
+              aria-label="WhatsApp"
             >
-              <IconBrandLinkedin className="size-5" />
+              <IconBrandWhatsapp className="size-5" />
             </a>
             <a
               href="https://instagram.com/agustinapresta"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                posthog.capture("instagram_clicked", { location: "hero" })
+              }
               className="rounded-full border border-border/50 bg-card/50 p-3 text-muted-foreground transition-all duration-300 hover:border-accent/30 hover:bg-card hover:text-accent"
               aria-label="Instagram"
             >
@@ -309,19 +335,14 @@ export default function Page() {
             </a>
             <a
               href="mailto:contacto@agustinapresta.com"
+              onClick={() =>
+                posthog.capture("email_clicked", { location: "hero" })
+              }
               className="rounded-full border border-border/50 bg-card/50 p-3 text-muted-foreground transition-all duration-300 hover:border-primary/30 hover:bg-card hover:text-primary"
               aria-label="Email"
             >
               <IconMail className="size-5" />
             </a>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-          <div className="flex flex-col items-center gap-2 text-muted-foreground">
-            <span className="text-xs tracking-widest uppercase">Scroll</span>
-            <div className="h-12 w-px bg-gradient-to-b from-muted-foreground/50 to-transparent" />
           </div>
         </div>
       </section>
@@ -415,14 +436,14 @@ export default function Page() {
               },
               {
                 prefix: "+",
-                value: 15,
+                value: 25,
                 suffix: "",
                 label: "Clientes",
               },
               {
                 prefix: "+",
-                value: 60,
-                suffix: "K",
+                value: 2.5,
+                suffix: "M",
                 label: "Seguidores generados",
               },
               { prefix: "+", value: 10, suffix: "", label: "Industrias" },
@@ -542,21 +563,28 @@ export default function Page() {
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                posthog.capture("whatsapp_clicked", { location: "contact" })
+              }
+              className="group order-2 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 sm:order-none"
+            >
+              <IconBrandWhatsapp className="size-5" />
+              WhatsApp
+            </Link>
             <a
               href="mailto:contacto@agustinapresta.com"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/25"
+              onClick={() =>
+                posthog.capture("email_clicked", { location: "contact" })
+              }
+              className="group order-1 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-8 py-4 text-base font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:border-accent/30 hover:bg-card sm:order-none"
             >
               <IconMail className="size-5" />
               Enviar email
             </a>
-            <Link
-              href="https://www.linkedin.com/in/agustinapresta"
-              target="_blank"
-              className="group inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-8 py-4 text-base font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:border-accent/30 hover:bg-card"
-            >
-              <IconBrandLinkedin className="size-5" />
-              LinkedIn
-            </Link>
           </div>
         </div>
       </section>
@@ -572,18 +600,24 @@ export default function Page() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://www.linkedin.com/in/agustinapresta"
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                posthog.capture("whatsapp_clicked", { location: "footer" })
+              }
               className="text-foreground/60 transition-colors hover:text-primary"
-              aria-label="LinkedIn"
+              aria-label="WhatsApp"
             >
-              <IconBrandLinkedin className="size-5" />
+              <IconBrandWhatsapp className="size-5" />
             </a>
             <a
               href="https://instagram.com/agustinapresta"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                posthog.capture("instagram_clicked", { location: "footer" })
+              }
               className="text-foreground/60 transition-colors hover:text-accent"
               aria-label="Instagram"
             >
@@ -591,6 +625,9 @@ export default function Page() {
             </a>
             <a
               href="mailto:contacto@agustinapresta.com"
+              onClick={() =>
+                posthog.capture("email_clicked", { location: "footer" })
+              }
               className="text-foreground/60 transition-colors hover:text-primary"
               aria-label="Email"
             >
