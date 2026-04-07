@@ -535,7 +535,7 @@ export default function Page() {
               logoHeight={62.5}
               speed={40}
               gap={48}
-              className="[&_img]:max-w-[116.476px]! [&_img]:object-contain! [&_img[src*='crown']]:max-w-[145.595px]!"
+              className="[&_img]:max-w-[116.476px]! [&_img]:object-contain! [&_img[src*='crown']]:max-w-[145.595px]! [&_img[src*='doll-store']]:h-[82px]! [&_img[src*='ribs-al-rio']]:h-[97.65625px]! [&_img[src*='pucheta-paz']]:max-w-[133.95px]!"
             />
           </div>
         </div>
