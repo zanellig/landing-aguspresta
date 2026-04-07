@@ -32,10 +32,9 @@ const editorialFont = Cormorant_Garamond({
 const titleWords = ["Agus", "Presta"]
 
 const navigationLinks = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#brands", label: "Marcas" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "Sobre mí" },
+  { href: "#services", label: "Que hago" },
+  { href: "#contact", label: "Contacto" },
 ]
 
 const services = [
