@@ -89,7 +89,7 @@ const marqueeItems = [
 
 const clientLogos = [
   { src: "/makro.webp", alt: "Makro" },
-  { src: "/amk.png", alt: "AMK" },
+  { src: "/amk.webp", alt: "AMK" },
   { src: "/bayer.webp", alt: "Bayer" },
   {
     node: (
@@ -103,14 +103,14 @@ const clientLogos = [
       />
     ),
   },
-  { src: "/ilolay.png", alt: "Ilolay" },
-  { src: "/ribs-al-rio.png", alt: "Ribs al Rio" },
-  { src: "/crown-mustang-better-white.webp", alt: "Crown Mustang" },
+  { src: "/ilolay.webp", alt: "Ilolay" },
+  { src: "/ribs-al-rio.webp", alt: "Ribs al Rio" },
+  { src: "/crown-mustang.webp", alt: "Crown Mustang" },
   { src: "/doll-store-white.webp", alt: "Doll Store" },
-  { src: "/ds-men-white.webp", alt: "DS Men" },
   { src: "/pucheta-paz-white.webp", alt: "Pucheta Paz" },
   { src: "/state-of-chaos-white.webp", alt: "State of Chaos" },
-  { src: "/vacalin.png", alt: "Vacalin" },
+  { src: "/vacalin.webp", alt: "Vacalin" },
+  { src: "/ds-men-white.webp", alt: "DS Men" },
   { src: "/wework.webp", alt: "WeWork" },
 ]
 
