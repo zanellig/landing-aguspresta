@@ -6,14 +6,14 @@ This is a Next.js App Router project. Main routes live in `app/`, with the landi
 Reusable UI lives in `components/`. Keep generic primitives in `components/ui/` and page-specific display components alongside the existing feature components such as `CountUp.jsx` and `ThemeToggle.tsx`. Shared helpers belong in `lib/`, currently `lib/utils.ts` for class merging. Static assets go in `public/`. Reference docs and content notes live in `docs/`. Utility scripts belong in `scripts/`.
 
 ## Build, Test, and Development Commands
-- `bun install`: install dependencies.
-- `bun run dev`: start the local Next.js dev server with Turbopack.
-- `bun run build`: create the production build.
-- `bun run start`: serve the production build locally.
-- `bun run lint`: run ESLint across the repo.
-- `bun run typecheck`: run `tsc --noEmit`; use this explicitly because builds currently ignore TypeScript errors in `next.config.mjs`.
-- `bun run format`: format `*.ts` and `*.tsx` files with Prettier.
-- `bun run to:webp`: convert image assets with `scripts/convert-to-webp.mjs` using the Bun-managed toolchain.
+- `pnpm install`: install dependencies.
+- `pnpm run dev`: start the local Next.js dev server with Turbopack.
+- `pnpm run build`: create the production build.
+- `pnpm run start`: serve the production build locally.
+- `pnpm run lint`: run ESLint across the repo.
+- `pnpm run typecheck`: run `tsc --noEmit`; use this explicitly because builds currently ignore TypeScript errors in `next.config.mjs`.
+- `pnpm run format`: format `*.ts` and `*.tsx` files with Prettier.
+- `pnpm run to:webp`: convert image assets with `scripts/convert-to-webp.mjs` using the Node.js toolchain.
 
 ## Coding Style & Naming Conventions
 Use 2-space indentation, no semicolons, double quotes, and trailing commas where valid ES5 syntax allows them. Prettier and `prettier-plugin-tailwindcss` define the source of truth for formatting and Tailwind class order.
@@ -21,7 +21,7 @@ Use 2-space indentation, no semicolons, double quotes, and trailing commas where
 Prefer `@/` imports over deep relative paths. Use `PascalCase` for React component files, `camelCase` for utilities, and keep CSS files paired with their component when a component already follows that pattern, for example `GridMotion.jsx` and `GridMotion.css`.
 
 ## Testing Guidelines
-There is no automated test suite configured yet. Until one is added, every change should pass `bun run lint` and `bun run typecheck`, plus manual verification in `bun run dev`.
+There is no automated test suite configured yet. Until one is added, every change should pass `pnpm run lint` and `pnpm run typecheck`, plus manual verification in `pnpm run dev`.
 
 If you add tests, place them in `tests/` or next to the feature as `*.test.ts(x)`, and document the new command in `package.json`.
 
